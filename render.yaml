@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: resenas-criticas
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: Z_URL
+        value: https://ms-productos-1uz6.onrender.com
+      - key: RESENAS_URL
+        value: https://resenas-service.onrender.com
+      - key: SERVICE_NAME
+        value: resenas-criticas
+      - key: NODE_VERSION
+        value: "22"
